@@ -1,13 +1,16 @@
 /* Your SCSS here. */
 $bg-color1: rgb(60, 184, 147);
-$bg-color2: rgb(255, 255, 255);
+$bg-color2: rgba(216, 242, 244, 0.762);
 $top-bottom-color: hsl(205, 32%, 18%);
+
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     margin: 0;
 }
 
-// top navbar
 
 .header {
     position: sticky;
@@ -21,28 +24,38 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transition:all .1s ease;
+    transition:all .3s ease;
     
     
     ul {
         font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         text-transform: uppercase;
         display: flex;
+        align-items: center;
         gap: 1.5rem;
 
         li {
             list-style-type: none;
             font-weight: 600;
             font-size: 3rem;
-            
+            transition:all .3s ease;
+
             a {
+                display: inline-block;
+                padding: 1rem 2rem;
                 text-decoration: none;
+                // background-color: black;
                 color: white;
                 font-size: 1.5rem;
+                transition: background-color .25s ease;
 
                 &:hover {
-                    color: hsl(221, 48%, 64%);
-                }          
+                    color: $bg-color1;
+                }
+                
+                &.active {
+                    background-color: hsl(0, 0%, 12%);
+                }
             }
         }
     }
@@ -56,7 +69,6 @@ body {
 }
 
 
-// middle sections
 section {
     height: 100vh;
     display: flex;
@@ -64,9 +76,25 @@ section {
     align-items: center;
 }
 
+.carousel {
+    width: 80%;
+}
+
+
+
 #portfolio {background-color: $bg-color1;}
-#about {background-color: $bg-color2;}
+#about {
+    background-color: $bg-color2;
+    background: 
+        linear-gradient( $bg-color2, $bg-color2),
+        url(../assets/TacoBellxMichigan.jpg) center fixed;
+    color: black;
+    
+}
 #contact {background-color: $bg-color1;}
+
+
+
 
 
 // footer
